@@ -26,4 +26,5 @@ jobs:
           user: server736453_dev
           password: ${{ secrets.FTP_PASSWORD }}
           delete: "false"
-          local_dir: "./test3"
+          local_dir: "./"
+          remote_dir: "./test3"
