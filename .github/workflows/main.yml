@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
     
     
         
@@ -18,13 +18,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # Here is the deployment action
-      - name: Upload from public_html via FTP
-        uses: airvzxf/ftp-deployment-action@latest
+      - name: deploy to server
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
         
           server: server736453.nazwa.pl
-          user: server736453_dev
+          username: server736453_dev
           password: ${{ secrets.FTP_PASSWORD }}
-          delete: "false"
-          local_dir: "./"
-          remote_dir: "./test3"
+          local-dir: ./test3
+          protocol: 'ftps'
