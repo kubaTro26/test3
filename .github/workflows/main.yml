@@ -25,5 +25,5 @@ jobs:
           server: server736453.nazwa.pl
           username: server736453_dev
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./test3
+          local-dir: ./test3/
           protocol: 'ftps'
